@@ -133,6 +133,9 @@
 /* Begin PBXProject section */
 		C975DFB013B8EE9B00472225 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+			};
 			buildConfigurationList = C975DFB313B8EE9B00472225 /* Build configuration list for PBXProject "AnimationFromTo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -283,6 +286,7 @@
 				C975DFDA13B8EE9B00472225 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

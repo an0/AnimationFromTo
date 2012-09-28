@@ -58,78 +58,87 @@ const static CGPoint p2 = (CGPoint){160, 430};
 	return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
-- (void)tapRecognized:(UIGestureRecognizer *)gestureRecognizer {	
+- (void)tapRecognized:(UIGestureRecognizer *)gestureRecognizer {
+	if (gestureRecognizer.state != UIGestureRecognizerStateRecognized) return;
+	
 	switch (method) {
 		case 0: // Property animation.
-			if(viewState == 0) { // First tap.
+			if (viewState == 0) { // First tap.
 				[CATransaction setAnimationDuration:2];
 				ball.position = p2;
-			}  else { // Second tap.
+			} else { // Second tap.
 				ball.position = p1;
 			}
 			break;
-			
+
 		case 1: // Explicit animation with cancelation via delegate.
-			if(viewState == 0) { // First tap.
-				CABasicAnimation *move = [CABasicAnimation animationWithKeyPath:@"position"];
-				move.removedOnCompletion = NO;
-				move.fillMode = kCAFillModeForwards;
-				move.duration = 2;
-				move.toValue = [NSValue valueWithCGPoint:p2];
-				[ball addAnimation:move forKey:@"move"];
-			}  else { // Second tap.
-				CABasicAnimation* stop = [CABasicAnimation animationWithKeyPath:@"position"];
-				[stop setValue:@"stop" forKey:@"tag"];
-				stop.delegate = self;
-				stop.toValue = [NSValue valueWithCGPoint:p1];
-				[ball addAnimation:stop forKey:@"stop"];
+				// !!!: This one no longer works perfectly. It seems canceling the first animation in second one's -animationDidStop:finished: delegate method is too late — you can see a flash of first one before it is removed after the second one stops.
+			if (viewState == 0) { // First tap.
+				CABasicAnimation *drop = [CABasicAnimation animationWithKeyPath:@"position"];
+				drop.removedOnCompletion = NO;
+				drop.fillMode = kCAFillModeForwards;
+				drop.duration = 2;
+				drop.toValue = [NSValue valueWithCGPoint:p2];
+				[ball addAnimation:drop forKey:@"drop"];
+			} else { // Second tap.
+				CABasicAnimation* bounce = [CABasicAnimation animationWithKeyPath:@"position"];
+				[bounce setValue:@"bounce" forKey:@"tag"];
+				bounce.delegate = self;
+				bounce.toValue = [NSValue valueWithCGPoint:p1];
+				[ball addAnimation:bounce forKey:@"bounce"];
 			}
 			break;
 			
 		case 2: // Explicit animation with overwriting.
-			if(viewState == 0) { // First tap.
-				CABasicAnimation *move = [CABasicAnimation animationWithKeyPath:@"position"];
-				move.removedOnCompletion = NO;
-				move.fillMode = kCAFillModeForwards;
-				move.duration = 2;
-				move.toValue = [NSValue valueWithCGPoint:p2];
-				[ball addAnimation:move forKey:@"position"];
-			}  else { // Second tap.
+			if (viewState == 0) { // First tap.
+				CABasicAnimation *drop = [CABasicAnimation animationWithKeyPath:@"position"];
+				drop.removedOnCompletion = NO;
+				drop.fillMode = kCAFillModeForwards;
+				drop.duration = 2;
+				drop.toValue = [NSValue valueWithCGPoint:p2];
+				[ball addAnimation:drop forKey:@"move"];
+			} else { // Second tap.
 				CGPoint startPoint = ((CALayer *)ball.presentationLayer).position;
-				CABasicAnimation* stop = [CABasicAnimation animationWithKeyPath:@"position"];
-				stop.fromValue = [NSValue valueWithCGPoint:startPoint];
-				stop.toValue = [NSValue valueWithCGPoint:p1];
-				[ball addAnimation:stop forKey:@"position"];
+				CABasicAnimation* bounce = [CABasicAnimation animationWithKeyPath:@"position"];
+				bounce.fromValue = [NSValue valueWithCGPoint:startPoint];
+				bounce.toValue = [NSValue valueWithCGPoint:p1];
+				[ball addAnimation:bounce forKey:@"move"];
 			}
 			break;
 			
 			
 		case 3: // Fall with property animation; rise with explicit animation.
-			if(viewState == 0) { // First tap.
+			if (viewState == 0) { // First tap.
 				[CATransaction setAnimationDuration:2];
 				ball.position = p2;
-			}  else { // Second tap.
+			} else { // Second tap.
 				CGPoint startPoint = ((CALayer *)ball.presentationLayer).position;
-				ball.position = p1;
 				CABasicAnimation* stop = [CABasicAnimation animationWithKeyPath:@"position"];
 				stop.fromValue = [NSValue valueWithCGPoint:startPoint];
 				stop.toValue = [NSValue valueWithCGPoint:p1];
 				[ball addAnimation:stop forKey:@"position"];
+				// We are doing explicit animation so don't let the implicit animation interfere.
+				[CATransaction setDisableActions:YES];
+				ball.position = p1;
+				[CATransaction setDisableActions:NO];
 			}
 			break;
 			
 		case 4: // Fall with explicit animation; rise with property animation.
-			if(viewState == 0) { // First tap.
+			if (viewState == 0) { // First tap.
 				CGPoint startPoint = ball.position;
+				CABasicAnimation *drop = [CABasicAnimation animationWithKeyPath:@"position"];
+				drop.removedOnCompletion = NO;
+				drop.fillMode = kCAFillModeForwards;
+				drop.duration = 2;
+				drop.fromValue = [NSValue valueWithCGPoint:startPoint];
+				drop.toValue = [NSValue valueWithCGPoint:p2];
+				[ball addAnimation:drop forKey:@"position"];
+				// We are doing explicit animation so don't let the implicit animation interfere.
+				[CATransaction setDisableActions:YES];
 				ball.position = p2;
-				CABasicAnimation *move = [CABasicAnimation animationWithKeyPath:@"position"];
-				move.removedOnCompletion = NO;
-				move.fillMode = kCAFillModeForwards;
-				move.duration = 2;
-				move.fromValue = [NSValue valueWithCGPoint:startPoint];
-				move.toValue = [NSValue valueWithCGPoint:p2];
-				[ball addAnimation:move forKey:@"position"];
-			}  else { // Second tap.
+				[CATransaction setDisableActions:NO];
+			} else { // Second tap.
 				ball.position = p1;
 			}
 			break;
@@ -145,8 +154,8 @@ const static CGPoint p2 = (CGPoint){160, 430};
 
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
 	NSString *tag = [anim valueForKey:@"tag"];
-	if ([tag isEqualToString:@"stop"]) {
-		[ball removeAnimationForKey:@"move"];
+	if ([tag isEqualToString:@"bounce"]) {
+		[ball removeAnimationForKey:@"drop"];
 	}
 }
 
