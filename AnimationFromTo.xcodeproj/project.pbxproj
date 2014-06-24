@@ -7,36 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C975DFBE13B8EE9B00472225 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C975DFBD13B8EE9B00472225 /* UIKit.framework */; };
-		C975DFC013B8EE9B00472225 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C975DFBF13B8EE9B00472225 /* Foundation.framework */; };
-		C975DFC213B8EE9B00472225 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C975DFC113B8EE9B00472225 /* CoreGraphics.framework */; };
 		C975DFC813B8EE9B00472225 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C975DFC613B8EE9B00472225 /* InfoPlist.strings */; };
 		C975DFCA13B8EE9B00472225 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C975DFC913B8EE9B00472225 /* main.m */; };
-		C975DFCE13B8EE9B00472225 /* AnimationFromToAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C975DFCD13B8EE9B00472225 /* AnimationFromToAppDelegate.m */; };
-		C975DFD013B8EE9B00472225 /* AnimationFromToViewController.h in Resources */ = {isa = PBXBuildFile; fileRef = C975DFCF13B8EE9B00472225 /* AnimationFromToViewController.h */; };
-		C975DFD213B8EE9B00472225 /* AnimationFromToViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C975DFD113B8EE9B00472225 /* AnimationFromToViewController.m */; };
-		C975DFD513B8EE9B00472225 /* AnimationFromToViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C975DFD313B8EE9B00472225 /* AnimationFromToViewController.xib */; };
+		C975DFCE13B8EE9B00472225 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C975DFCD13B8EE9B00472225 /* AppDelegate.m */; };
+		C975DFD013B8EE9B00472225 /* ViewController.h in Resources */ = {isa = PBXBuildFile; fileRef = C975DFCF13B8EE9B00472225 /* ViewController.h */; };
+		C975DFD213B8EE9B00472225 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C975DFD113B8EE9B00472225 /* ViewController.m */; };
 		C975DFDD13B8EF1F00472225 /* BallLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C975DFDC13B8EF1F00472225 /* BallLayer.m */; };
-		C975DFDF13B8EF3900472225 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C975DFDE13B8EF3900472225 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C975DFB913B8EE9B00472225 /* AnimationFromTo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimationFromTo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C975DFBD13B8EE9B00472225 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		C975DFBF13B8EE9B00472225 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		C975DFC113B8EE9B00472225 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		C975DFC513B8EE9B00472225 /* AnimationFromTo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AnimationFromTo-Info.plist"; sourceTree = "<group>"; };
 		C975DFC713B8EE9B00472225 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C975DFC913B8EE9B00472225 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C975DFCB13B8EE9B00472225 /* AnimationFromTo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AnimationFromTo-Prefix.pch"; sourceTree = "<group>"; };
-		C975DFCC13B8EE9B00472225 /* AnimationFromToAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnimationFromToAppDelegate.h; sourceTree = "<group>"; };
-		C975DFCD13B8EE9B00472225 /* AnimationFromToAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnimationFromToAppDelegate.m; sourceTree = "<group>"; };
-		C975DFCF13B8EE9B00472225 /* AnimationFromToViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnimationFromToViewController.h; sourceTree = "<group>"; };
-		C975DFD113B8EE9B00472225 /* AnimationFromToViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnimationFromToViewController.m; sourceTree = "<group>"; };
-		C975DFD413B8EE9B00472225 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/AnimationFromToViewController.xib; sourceTree = "<group>"; };
+		C975DFCC13B8EE9B00472225 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C975DFCD13B8EE9B00472225 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C975DFCF13B8EE9B00472225 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		C975DFD113B8EE9B00472225 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C975DFDB13B8EF1F00472225 /* BallLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BallLayer.h; sourceTree = "<group>"; };
 		C975DFDC13B8EF1F00472225 /* BallLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BallLayer.m; sourceTree = "<group>"; };
-		C975DFDE13B8EF3900472225 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,10 +34,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C975DFDF13B8EF3900472225 /* QuartzCore.framework in Frameworks */,
-				C975DFBE13B8EE9B00472225 /* UIKit.framework in Frameworks */,
-				C975DFC013B8EE9B00472225 /* Foundation.framework in Frameworks */,
-				C975DFC213B8EE9B00472225 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,10 +60,6 @@
 		C975DFBC13B8EE9B00472225 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C975DFDE13B8EF3900472225 /* QuartzCore.framework */,
-				C975DFBD13B8EE9B00472225 /* UIKit.framework */,
-				C975DFBF13B8EE9B00472225 /* Foundation.framework */,
-				C975DFC113B8EE9B00472225 /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -87,11 +69,10 @@
 			children = (
 				C975DFDB13B8EF1F00472225 /* BallLayer.h */,
 				C975DFDC13B8EF1F00472225 /* BallLayer.m */,
-				C975DFCC13B8EE9B00472225 /* AnimationFromToAppDelegate.h */,
-				C975DFCD13B8EE9B00472225 /* AnimationFromToAppDelegate.m */,
-				C975DFCF13B8EE9B00472225 /* AnimationFromToViewController.h */,
-				C975DFD113B8EE9B00472225 /* AnimationFromToViewController.m */,
-				C975DFD313B8EE9B00472225 /* AnimationFromToViewController.xib */,
+				C975DFCC13B8EE9B00472225 /* AppDelegate.h */,
+				C975DFCD13B8EE9B00472225 /* AppDelegate.m */,
+				C975DFCF13B8EE9B00472225 /* ViewController.h */,
+				C975DFD113B8EE9B00472225 /* ViewController.m */,
 				C975DFC413B8EE9B00472225 /* Supporting Files */,
 			);
 			path = AnimationFromTo;
@@ -134,7 +115,7 @@
 		C975DFB013B8EE9B00472225 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0600;
 			};
 			buildConfigurationList = C975DFB313B8EE9B00472225 /* Build configuration list for PBXProject "AnimationFromTo" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -159,8 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C975DFC813B8EE9B00472225 /* InfoPlist.strings in Resources */,
-				C975DFD013B8EE9B00472225 /* AnimationFromToViewController.h in Resources */,
-				C975DFD513B8EE9B00472225 /* AnimationFromToViewController.xib in Resources */,
+				C975DFD013B8EE9B00472225 /* ViewController.h in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,8 +152,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C975DFCA13B8EE9B00472225 /* main.m in Sources */,
-				C975DFCE13B8EE9B00472225 /* AnimationFromToAppDelegate.m in Sources */,
-				C975DFD213B8EE9B00472225 /* AnimationFromToViewController.m in Sources */,
+				C975DFCE13B8EE9B00472225 /* AppDelegate.m in Sources */,
+				C975DFD213B8EE9B00472225 /* ViewController.m in Sources */,
 				C975DFDD13B8EF1F00472225 /* BallLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -189,14 +169,6 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		C975DFD313B8EE9B00472225 /* AnimationFromToViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C975DFD413B8EE9B00472225 /* en */,
-			);
-			name = AnimationFromToViewController.xib;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -204,10 +176,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -217,10 +197,15 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -229,16 +214,28 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

@@ -6,15 +6,13 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
-#import "AnimationFromToAppDelegate.h"
+#import "AppDelegate.h"
 
 int main(int argc, char *argv[])
 {
 	int retVal = 0;
 	@autoreleasepool {
-	    retVal = UIApplicationMain(argc, argv, nil, NSStringFromClass([AnimationFromToAppDelegate class]));
+	    retVal = UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
 	}
 	return retVal;
 }
